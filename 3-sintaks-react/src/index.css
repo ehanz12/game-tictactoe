@@ -1,0 +1,139 @@
+*{
+  margin : 0px;
+  padding : 0px;
+  font-family: sans-serif;
+}
+
+body {
+  background-color: #ddd;
+}
+.navbar {
+  display : flex;
+  width : 100%;
+  border : 1px solid black;
+  height: 50px;
+  align-items: center;
+
+}
+
+ul {
+  display: flex;
+  padding-left: 20px;
+  justify-content: space-between;
+  width: 100%;
+}
+
+ul > li {
+  list-style-type : none;
+  font-weight: 700;
+  font-size: 23px;
+}
+
+.right {
+  display: flex;
+  list-style-type: none;
+  padding-right: 10px;
+}
+
+.right > li {
+  padding-right: 20px;
+}
+
+.container-content {
+  width: 99%;
+  margin-top: 30px;
+  margin-left: 8px ;
+  margin-right: 20px;
+  border: 1px solid white;
+  justify-content: center;
+  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(120px, 1fr));
+ grid-template-areas: "item-1 item-1"
+ "item-2 item-2"
+ "item-3 item-3";
+ gap: 20px;
+}
+
+.item-1 {
+  grid-area: item-1;
+  justify-items: center ;
+  padding: 50px;
+  background-color: rgb(15, 182, 15);
+  border-radius: 20px;
+  color: white;
+  transition: .3s all;
+}
+
+.item-1 > a  {
+  text-decoration: none;
+  color: white;
+}
+
+.item-1 > a > h1 {
+  font-size: 40px;
+}
+
+.item-1:hover {
+ background-color: green;
+}
+
+.item-2 {
+  grid-area: item-2;
+  background-color: rgb(58, 58, 202);
+  justify-items: center ;
+  align-items: center;
+  padding: 50px;
+  border-radius: 20px;
+  color: white;
+  transition: .3s all;
+}
+
+.item-2 > a {
+  text-decoration: none;
+  color: white;
+}
+
+.item-2 > a > h1 {
+text-align: center;
+}
+
+.item-2:hover {
+  background-color:  rgb(0, 0, 255);
+ }
+
+.item-3 {
+  grid-area: item-3;
+  background-color: rgb(190, 16, 16);
+  justify-items: center ;
+  padding: 50px;
+  border-radius: 20px;
+  color: white;
+  transition: .3s all;
+}
+
+.item-3 > a {
+  text-decoration: none;
+  color: white;
+}
+
+.item-3 > a > h1 {
+  text-align: center;
+}
+
+.item-3:hover {
+  background-color: red;
+ }
+
+
+ /* responsive */
+ @media screen and (min-width: 576px) {
+  .container-content {
+   grid-template-areas: "item-1 item-1"
+   "item-2 item-3";
+  }
+
+  .item-2 > a > h1 {
+  
+  }
+ }
