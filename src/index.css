@@ -1,0 +1,109 @@
+/* Atur body agar permainan tampil di tengah layar */
+body {
+  font-family: Arial, sans-serif;
+  background-color: skyblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  color: #333;
+}
+
+.game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #ffffffaa;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.status {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #4c4c4c;
+}
+
+.board-row {
+  display: flex;
+}
+
+.square {
+  width: 80px;
+  height: 80px;
+  margin: 5px;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #555;
+  background: #f0f0f0;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.square:hover {
+  background: #ffe0e0;
+  transform: scale(1.1);
+}
+
+.square:active {
+  background: #ffc0c0;
+}
+
+.square:disabled {
+  background: #ddd;
+  color: #aaa;
+  cursor: not-allowed;
+}
+
+/* Tambahkan animasi untuk pemenang */
+.square.winner {
+  background: #4caf50;
+  color: #fff;
+  animation: winner-flash 1s infinite alternate;
+}
+
+@keyframes winner-flash {
+  0% {
+    box-shadow: 0 0 10px #4caf50;
+  }
+  100% {
+    box-shadow: 0 0 20px #4caf50;
+  }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+  .square {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+  }
+}
+
+.game-info {
+  margin-top: 20px;
+}
+
+.game-info ol {
+  padding-left: 20px;
+}
+
+.game-info button {
+  margin-bottom: 5px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  background: #6200ea;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.game-info button:hover {
+  background: #3700b3;
+}
